@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<catalogue id="tyranids-aos4-cat" name="Tyranids • Hive Tendril" revision="2"
-  gameSystemId="aos4-homebrew-gs" gameSystemRevision="1"
+<catalogue id="tyranids-aos4-cat" name="Tyranids • Hive Tendril" revision="3"
+  gameSystemId="aos4-homebrew-gs" gameSystemRevision="2"
   battleScribeVersion="2.03" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
 
+  <!-- Link to categories defined in the GST -->
   <categoryLinks>
-    <categoryLink id="lk-tyr" targetId="cat-tyranids" primary="false"/>
-    <categoryLink id="lk-hive" targetId="cat-hive" primary="false"/>
+    <categoryLink id="lk-tyr" targetId="TYRANIDS" primary="false"/>
+    <categoryLink id="lk-hive" targetId="HIVE TENDRIL" primary="false"/>
   </categoryLinks>
 
   <sharedRules>
@@ -22,7 +23,7 @@
     <!-- Hive Tyrant -->
     <selectionEntry id="se-hive-tyrant" name="Hive Tyrant" type="unit">
       <profiles>
-        <profile id="p-ht-unit" name="Hive Tyrant" typeId="unit" typeName="Unit">
+        <profile id="p-ht-unit" name="Hive Tyrant" typeId="Unit" typeName="Unit">
           <characteristics>
             <characteristic name="Move">9"</characteristic>
             <characteristic name="Save">3+</characteristic>
@@ -33,7 +34,7 @@
           </characteristics>
         </profile>
 
-        <profile id="p-ht-miss" name="Heavy Bio-cannon (opt.)" typeId="missile" typeName="Missile Weapon">
+        <profile id="p-ht-miss" name="Heavy Bio-cannon (opt.)" typeId="Missile Weapon" typeName="Missile Weapon">
           <characteristics>
             <characteristic name="Range">18"</characteristic>
             <characteristic name="Attacks">3</characteristic>
@@ -44,7 +45,7 @@
           </characteristics>
         </profile>
 
-        <profile id="p-ht-melee1" name="Monstrous Scything Talons" typeId="melee" typeName="Melee Weapon">
+        <profile id="p-ht-melee1" name="Monstrous Scything Talons" typeId="Melee Weapon" typeName="Melee Weapon">
           <characteristics>
             <characteristic name="Range">2"</characteristic>
             <characteristic name="Attacks">5</characteristic>
@@ -55,7 +56,7 @@
           </characteristics>
         </profile>
 
-        <profile id="p-ht-melee2" name="Bonesword &amp; Lash Whip" typeId="melee" typeName="Melee Weapon">
+        <profile id="p-ht-melee2" name="Bonesword &amp; Lash Whip" typeId="Melee Weapon" typeName="Melee Weapon">
           <characteristics>
             <characteristic name="Range">1"</characteristic>
             <characteristic name="Attacks">6</characteristic>
@@ -79,13 +80,13 @@
       </rules>
 
       <categoryLinks>
-        <categoryLink id="cl-ht-tyr" targetId="cat-tyranids"/>
-        <categoryLink id="cl-ht-hive" targetId="cat-hive"/>
-        <categoryLink id="cl-ht-hero" targetId="cat-hero"/>
-        <categoryLink id="cl-ht-leader" targetId="cat-leader"/>
-        <categoryLink id="cl-ht-mon" targetId="cat-monster"/>
-        <categoryLink id="cl-ht-wiz" targetId="cat-wizard"/>
-        <categoryLink id="cl-ht-syn" targetId="cat-synapse"/>
+        <categoryLink id="cl-ht-tyr" targetId="TYRANIDS"/>
+        <categoryLink id="cl-ht-hive" targetId="HIVE TENDRIL"/>
+        <categoryLink id="cl-ht-hero" targetId="HERO"/>
+        <categoryLink id="cl-ht-leader" targetId="Leader"/>
+        <categoryLink id="cl-ht-mon" targetId="Monster"/>
+        <categoryLink id="cl-ht-wiz" targetId="WIZARD"/>
+        <categoryLink id="cl-ht-syn" targetId="SYNAPSE"/>
       </categoryLinks>
 
       <costs>
@@ -96,7 +97,7 @@
     <!-- Termagants (10) -->
     <selectionEntry id="se-termagants-10" name="Termagants (10)" type="unit">
       <profiles>
-        <profile id="p-term-unit" name="Termagants" typeId="unit" typeName="Unit">
+        <profile id="p-term-unit" name="Termagants" typeId="Unit" typeName="Unit">
           <characteristics>
             <characteristic name="Move">6"</characteristic>
             <characteristic name="Save">6+</characteristic>
@@ -107,7 +108,7 @@
           </characteristics>
         </profile>
 
-        <profile id="p-term-miss" name="Fleshborers" typeId="missile" typeName="Missile Weapon">
+        <profile id="p-term-miss" name="Fleshborers" typeId="Missile Weapon" typeName="Missile Weapon">
           <characteristics>
             <characteristic name="Range">12"</characteristic>
             <characteristic name="Attacks">1</characteristic>
@@ -118,7 +119,7 @@
           </characteristics>
         </profile>
 
-        <profile id="p-term-melee" name="Chitin Blades" typeId="melee" typeName="Melee Weapon">
+        <profile id="p-term-melee" name="Chitin Blades" typeId="Melee Weapon" typeName="Melee Weapon">
           <characteristics>
             <characteristic name="Range">1"</characteristic>
             <characteristic name="Attacks">1</characteristic>
@@ -135,11 +136,11 @@
       </rules>
 
       <categoryLinks>
-        <categoryLink id="cl-term-tyr" targetId="cat-tyranids"/>
-        <categoryLink id="cl-term-hive" targetId="cat-hive"/>
-        <categoryLink id="cl-term-bline" targetId="cat-battleline"/>
-        <categoryLink id="cl-term-inf" targetId="cat-infantry"/>
-        <categoryLink id="cl-term-end" targetId="cat-endless"/>
+        <categoryLink id="cl-term-tyr" targetId="TYRANIDS"/>
+        <categoryLink id="cl-term-hive" targetId="HIVE TENDRIL"/>
+        <categoryLink id="cl-term-bline" targetId="Battleline"/>
+        <categoryLink id="cl-term-inf" targetId="Infantry"/>
+        <categoryLink id="cl-term-end" targetId="ENDLESS MULTITUDE"/>
       </categoryLinks>
 
       <costs>

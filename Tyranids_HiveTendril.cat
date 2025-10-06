@@ -1,149 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<catalogue id="tyranids-aos4-cat" name="Tyranids • Hive Tendril" revision="4"
-  gameSystemId="aos4-homebrew-gs" gameSystemRevision="3"
-  battleScribeVersion="2.03" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="tyranids-hive-tendril" name="Tyranids – Hive Tendril" revision="1"
+  gameSystemId="aos4-homebrew" gameSystemRevision="1"
+  battleScribeVersion="2.03"
+  xmlns="http://www.battlescribe.net/schema/catalogueSchema">
 
-  <categoryLinks>
-    <categoryLink id="lk-tyr" targetId="TYRANIDS" primary="false"/>
-    <categoryLink id="lk-hive" targetId="HIVE TENDRIL" primary="false"/>
-  </categoryLinks>
+  <!-- Categories (used for filters in the builder) -->
+  <categoryEntries>
+    <categoryEntry id="cat-leader" name="Leader"/>
+    <categoryEntry id="cat-battleline" name="Battleline"/>
+    <categoryEntry id="cat-monster" name="Monster"/>
+    <categoryEntry id="cat-hero" name="Hero"/>
+    <categoryEntry id="cat-vanguard" name="Vanguard"/>
+    <categoryEntry id="cat-endless" name="Endless Multitude"/>
+  </categoryEntries>
 
-  <sharedRules>
-    <rule id="r-synaptic-imperatives" name="Synaptic Imperatives (Command)">
-      <description>Once per phase: pick 1 friendly TYRANIDS unit wholly within 9" of a friendly SYNAPSE unit; that unit gets +1 to hit until end of phase.</description>
-    </rule>
-    <rule id="r-endless-swarm" name="Endless Swarm">
-      <description>End of your turn: if wholly within 9" of a SYNAPSE unit, return D3 slain models to this unit.</description>
-    </rule>
-  </sharedRules>
-
+  <!-- TERMAGANTS (example unit) -->
   <selectionEntries>
+    <selectionEntry id="se-termagants" name="Termagants" type="unit">
+      <!-- Tag as Battleline & Endless Multitude -->
+      <categoryLinks>
+        <categoryLink id="cl-term-battleline" targetId="cat-battleline" primary="false"/>
+        <categoryLink id="cl-term-endless" targetId="cat-endless" primary="false"/>
+      </categoryLinks>
 
-    <selectionEntry id="se-hive-tyrant" name="Hive Tyrant" type="unit">
+      <!-- Points (optional, change the value to your points) -->
+      <costs>
+        <cost id="cost-term-pts" name="pts" typeId="pts" value="100"/>
+      </costs>
+
+      <!-- The key part: profiles that MATCH the gst profile types -->
       <profiles>
-        <profile id="p-ht-unit" name="Hive Tyrant" typeId="Unit">
+        <profile id="p-term-unit" name="Termagants" typeId="pt-unit" typeName="Unit">
           <characteristics>
-            <characteristic name="Move">9"</characteristic>
-            <characteristic name="Save">3+</characteristic>
-            <characteristic name="Wounds">12</characteristic>
-            <characteristic name="Control">4</characteristic>
-            <characteristic name="Unit Size">1</characteristic>
-            <characteristic name="Base">100mm</characteristic>
+            <characteristic id="ch-move" name="Move">6"</characteristic>
+            <characteristic id="ch-save" name="Save">6+</characteristic>
+            <characteristic id="ch-wounds" name="Wounds">1</characteristic>
+            <characteristic id="ch-control" name="Control">1</characteristic>
           </characteristics>
         </profile>
 
-        <profile id="p-ht-miss" name="Heavy Bio-cannon (opt.)" typeId="Missile Weapon">
+        <profile id="p-fleshborer" name="Fleshborer" typeId="pt-weapon" typeName="Weapon">
           <characteristics>
-            <characteristic name="Range">18"</characteristic>
-            <characteristic name="Attacks">3</characteristic>
-            <characteristic name="To Hit">3+</characteristic>
-            <characteristic name="To Wound">3+</characteristic>
-            <characteristic name="Rend">-2</characteristic>
-            <characteristic name="Damage">2</characteristic>
+            <characteristic id="w-range" name="Range">12"</characteristic>
+            <characteristic id="w-attacks" name="Attacks">1</characteristic>
+            <characteristic id="w-tohit" name="To Hit">4+</characteristic>
+            <characteristic id="w-towound" name="To Wound">4+</characteristic>
+            <characteristic id="w-rend" name="Rend">-</characteristic>
+            <characteristic id="w-damage" name="Damage">1</characteristic>
           </characteristics>
         </profile>
 
-        <profile id="p-ht-melee1" name="Monstrous Scything Talons" typeId="Melee Weapon">
+        <profile id="p-chitin" name="Chitin Blades" typeId="pt-weapon" typeName="Weapon">
           <characteristics>
-            <characteristic name="Range">2"</characteristic>
-            <characteristic name="Attacks">5</characteristic>
-            <characteristic name="To Hit">3+</characteristic>
-            <characteristic name="To Wound">3+</characteristic>
-            <characteristic name="Rend">-2</characteristic>
-            <characteristic name="Damage">3</characteristic>
-          </characteristics>
-        </profile>
-
-        <profile id="p-ht-melee2" name="Bonesword &amp; Lash Whip" typeId="Melee Weapon">
-          <characteristics>
-            <characteristic name="Range">1"</characteristic>
-            <characteristic name="Attacks">6</characteristic>
-            <characteristic name="To Hit">3+</characteristic>
-            <characteristic name="To Wound">3+</characteristic>
-            <characteristic name="Rend">-1</characteristic>
-            <characteristic name="Damage">2</characteristic>
+            <characteristic id="mw-range" name="Range">1"</characteristic>
+            <characteristic id="mw-attacks" name="Attacks">1</characteristic>
+            <characteristic id="mw-tohit" name="To Hit">5+</characteristic>
+            <characteristic id="mw-towound" name="To Wound">5+</characteristic>
+            <characteristic id="mw-rend" name="Rend">-</characteristic>
+            <characteristic id="mw-damage" name="Damage">1</characteristic>
           </characteristics>
         </profile>
       </profiles>
-
-      <rules>
-        <rule id="r-ht-synapse" name="SYNAPSE"/>
-        <rule id="r-ht-alpha" name="Alpha of the Swarm">
-          <description>ENDLESS MULTITUDE wholly within 12" can Run and still Charge.</description>
-        </rule>
-        <rule id="r-ht-command" name="Command: Old Adversary">
-          <description>Once per phase, pick 1 friendly TYRANIDS unit wholly within 9": +1 to hit in melee this phase.</description>
-        </rule>
-        <infoLink id="il-imp" name="Synaptic Imperatives (Command)" targetId="r-synaptic-imperatives" type="rule"/>
-      </rules>
-
-      <categoryLinks>
-        <categoryLink id="cl-ht-tyr" targetId="TYRANIDS"/>
-        <categoryLink id="cl-ht-hive" targetId="HIVE TENDRIL"/>
-        <categoryLink id="cl-ht-hero" targetId="HERO"/>
-        <categoryLink id="cl-ht-leader" targetId="Leader"/>
-        <categoryLink id="cl-ht-mon" targetId="Monster"/>
-        <categoryLink id="cl-ht-wiz" targetId="WIZARD"/>
-        <categoryLink id="cl-ht-syn" targetId="SYNAPSE"/>
-      </categoryLinks>
-
-      <costs>
-        <cost name="pts" typeId="pts" value="300.0"/>
-      </costs>
     </selectionEntry>
-
-    <selectionEntry id="se-termagants-10" name="Termagants (10)" type="unit">
-      <profiles>
-        <profile id="p-term-unit" name="Termagants" typeId="Unit">
-          <characteristics>
-            <characteristic name="Move">6"</characteristic>
-            <characteristic name="Save">6+</characteristic>
-            <characteristic name="Wounds">1</characteristic>
-            <characteristic name="Control">1</characteristic>
-            <characteristic name="Unit Size">10</characteristic>
-            <characteristic name="Base">25mm</characteristic>
-          </characteristics>
-        </profile>
-
-        <profile id="p-term-miss" name="Fleshborers" typeId="Missile Weapon">
-          <characteristics>
-            <characteristic name="Range">12"</characteristic>
-            <characteristic name="Attacks">1</characteristic>
-            <characteristic name="To Hit">4+</characteristic>
-            <characteristic name="To Wound">4+</characteristic>
-            <characteristic name="Rend">-</characteristic>
-            <characteristic name="Damage">1</characteristic>
-          </characteristics>
-        </profile>
-
-        <profile id="p-term-melee" name="Chitin Blades" typeId="Melee Weapon">
-          <characteristics>
-            <characteristic name="Range">1"</characteristic>
-            <characteristic name="Attacks">1</characteristic>
-            <characteristic name="To Hit">5+</characteristic>
-            <characteristic name="To Wound">5+</characteristic>
-            <characteristic name="Rend">-</characteristic>
-            <characteristic name="Damage">1</characteristic>
-          </characteristics>
-        </profile>
-      </profiles>
-
-      <rules>
-        <infoLink id="il-endless" name="Endless Swarm" targetId="r-endless-swarm" type="rule"/>
-      </rules>
-
-      <categoryLinks>
-        <categoryLink id="cl-term-tyr" targetId="TYRANIDS"/>
-        <categoryLink id="cl-term-hive" targetId="HIVE TENDRIL"/>
-        <categoryLink id="cl-term-bline" targetId="Battleline"/>
-        <categoryLink id="cl-term-inf" targetId="Infantry"/>
-        <categoryLink id="cl-term-end" targetId="ENDLESS MULTITUDE"/>
-      </categoryLinks>
-
-      <costs>
-        <cost name="pts" typeId="pts" value="110.0"/>
-      </costs>
-    </selectionEntry>
-
   </selectionEntries>
+
+  <!-- TEMPLATE: copy from here down to add more units quickly -->
+  <sharedSelectionEntries>
+    <selectionEntry id="TEMPLATE-COPYME" name="UNIT NAME" type="unit" hidden="true">
+      <categoryLinks>
+        <!-- set the right categories for the unit -->
+        <!-- e.g., <categoryLink id="x" targetId="cat-leader"/> -->
+      </categoryLinks>
+      <profiles>
+        <profile id="tmpl-unit" name="UNIT NAME" typeId="pt-unit" typeName="Unit">
+          <characteristics>
+            <characteristic id="tm-move" name="Move">X"</characteristic>
+            <characteristic id="tm-save" name="Save">X+</characteristic>
+            <characteristic id="tm-wounds" name="Wounds">X</characteristic>
+            <characteristic id="tm-control" name="Control">X</characteristic>
+          </characteristics>
+        </profile>
+        <!-- add one or more Weapon profiles -->
+        <profile id="tmpl-weapon-1" name="WEAPON NAME" typeId="pt-weapon" typeName="Weapon">
+          <characteristics>
+            <characteristic id="twr" name="Range">X"</characteristic>
+            <characteristic id="twa" name="Attacks">X</characteristic>
+            <characteristic id="twh" name="To Hit">X+</characteristic>
+            <characteristic id="tww" name="To Wound">X+</characteristic>
+            <characteristic id="twrend" name="Rend">-X</characteristic>
+            <characteristic id="twdmg" name="Damage">X</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+    </selectionEntry>
+  </sharedSelectionEntries>
 </catalogue>
